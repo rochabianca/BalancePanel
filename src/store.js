@@ -3,15 +3,7 @@ import firebase from "firebase";
 import "firebase/firestore";
 import { reactReduxFirebase, firebaseReducer } from "react-redux-firebase";
 import { reduxFirestore, firestoreReducer } from "redux-firestore";
-
-const firebaseConfig = {
-  apiKey: "AIzaSyDnXNnkS7xINh3a6w5DOqByN0hzouUd-b8",
-  authDomain: "balancepanel.firebaseapp.com",
-  databaseURL: "https://balancepanel.firebaseio.com",
-  projectId: "balancepanel",
-  storageBucket: "balancepanel.appspot.com",
-  messagingSenderId: "250000219007"
-};
+import firebaseConfig from "./firebaseConfig";
 
 // react-redux-firebase config
 const rrfConfig = {
@@ -22,7 +14,7 @@ const rrfConfig = {
 //init firebase instance
 firebase.initializeApp(firebaseConfig);
 //init firestore
-// const firestore = firebase.firestore();
+const firestore = firebase.firestore();
 
 const createStoreWithFirebase = compose(
   reactReduxFirebase(firebase, rrfConfig),
